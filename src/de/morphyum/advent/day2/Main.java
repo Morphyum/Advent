@@ -22,6 +22,10 @@ public class Main {
 	static int[] test15 = {235,4935,4249,3316,1202,221,1835,380,249,1108,1922,5607,4255,238,211,3973};
 	static int[] test16 = {1738,207,179,137,226,907,1468,1341,1582,1430,851,213,393,1727,1389,632};
 	
+	static int[] e1 = {5,9,2,8};
+	static int[] e2 = {9,4,7,3};
+	static int[] e3 = {3,8,6,5};
+	
 	public static void main(String[] args) throws Exception {
 		
 		ArrayList<int[]> rowInputs = new ArrayList<int[]>();
@@ -54,7 +58,12 @@ public class Main {
 		for(Row r : rows){
 			checksum += solver.solveChecksumRow(r.getNumbers());
 		}
+		System.out.println(checksum);
 		
+		checksum = 0;
+		for(Row r : rows){
+			checksum += solver.solveChecksumRow2(r.getNumbers());
+		}
 		System.out.println(checksum);
 	}
 }

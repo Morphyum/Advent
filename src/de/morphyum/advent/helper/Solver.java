@@ -45,4 +45,23 @@ public class Solver {
 		diff = highest - lowest;
 		return diff;
 	}
+
+	public int solveChecksumRow2(int[] checksumInput) {
+		int diff = 0;
+		for (int i = 0; i < checksumInput.length; i++) {
+			for (int j = 1; j < checksumInput.length; j++) {
+				if (checksumInput[i] > checksumInput[j]) {
+					if ((checksumInput[i] % checksumInput[j]) == 0) {
+						diff = checksumInput[i] / checksumInput[j];
+					}
+				} else if (checksumInput[i] < checksumInput[j]) {
+						if ((checksumInput[j] % checksumInput[i]) == 0) {
+							diff = checksumInput[j] / checksumInput[i];
+						}
+					}
+				}
+			}
+		return diff;
+		}
+	
 }
