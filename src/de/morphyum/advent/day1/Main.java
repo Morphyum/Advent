@@ -14,6 +14,6 @@ public class Main {
 			captcha[i] = Integer.parseInt(captchaString.substring(i, i+1));
 		}
 		
-		System.out.println(solver.solveCaptcha(captcha));
+		System.out.println(solver.solveCaptcha2(captcha));
 	}
 }
