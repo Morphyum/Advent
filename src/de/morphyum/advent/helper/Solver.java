@@ -55,13 +55,30 @@ public class Solver {
 						diff = checksumInput[i] / checksumInput[j];
 					}
 				} else if (checksumInput[i] < checksumInput[j]) {
-						if ((checksumInput[j] % checksumInput[i]) == 0) {
-							diff = checksumInput[j] / checksumInput[i];
-						}
+					if ((checksumInput[j] % checksumInput[i]) == 0) {
+						diff = checksumInput[j] / checksumInput[i];
 					}
 				}
 			}
-		return diff;
 		}
+		return diff;
+	}
+	
+	public boolean solveDuplicate(String[] passphrase) {
+		boolean valid = true;
+		for(int i = 0; i < passphrase.length;i++) {
+			for(int j = 1; j < passphrase.length; j++) {
+				if(passphrase[i].equals(passphrase[j]) && i != j) {
+					valid = false;
+					break;
+				}
+			}
+		}
+		
+		
+		
+		return valid;
+		
+	}
 	
 }
