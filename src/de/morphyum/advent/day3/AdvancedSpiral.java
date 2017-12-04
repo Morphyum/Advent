@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class AdvancedSpiral {
 	private ArrayList<SpiralField> fields;
+	private int input;
 	boolean stop = false;
 	
 	public ArrayList<SpiralField> getFields() {
@@ -11,7 +12,8 @@ public class AdvancedSpiral {
 	}
 
 	public AdvancedSpiral(int numberOfFields) {
-		fields = new ArrayList<SpiralField>();
+		this.input = numberOfFields;
+		this.fields = new ArrayList<SpiralField>();
 		int x = 0;
 		int y = 0;
 		int m = 1;
@@ -72,7 +74,7 @@ public class AdvancedSpiral {
 				}
 			}
 		}
-		if(sum > 325489){
+		if(sum > input){
 			System.out.println(sum);
 			stop = true;
 		}
