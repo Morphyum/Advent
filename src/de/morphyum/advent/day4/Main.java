@@ -357,5 +357,14 @@ public class Main {
 			}
 		}
 		System.out.println(counter);
+		
+		counter = 0;
+		for (int i = 0; i < splitinput.length; i++) {
+			boolean valid = solver.solveAnagram(splitinput[i].split(" "));
+			if(valid) {
+				counter++;
+			}
+		}
+		System.out.println(counter);
 	}
 }

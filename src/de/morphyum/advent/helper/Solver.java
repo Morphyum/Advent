@@ -1,5 +1,7 @@
 package de.morphyum.advent.helper;
 
+import java.util.Arrays;
+
 public class Solver {
 	public int solveCaptcha(int[] captcha) {
 		int sum = 0;
@@ -69,6 +71,29 @@ public class Solver {
 		for(int i = 0; i < passphrase.length;i++) {
 			for(int j = 1; j < passphrase.length; j++) {
 				if(passphrase[i].equals(passphrase[j]) && i != j) {
+					valid = false;
+					break;
+				}
+			}
+		}
+		
+		
+		
+		return valid;
+		
+	}
+	
+	public boolean solveAnagram(String[] passphrase) {
+		boolean valid = true;
+		for(int i = 0; i < passphrase.length;i++) {
+			for(int j = 1; j < passphrase.length; j++) {
+				char[] chars1 =  passphrase[i].toCharArray();
+				char[] chars2 =  passphrase[j].toCharArray();
+				Arrays.sort(chars1);
+				Arrays.sort(chars2);
+				String word1 = String.valueOf(chars1);
+				String word2 = String.valueOf(chars2);
+				if(word1.equals(word2) && i != j) {
 					valid = false;
 					break;
 				}
